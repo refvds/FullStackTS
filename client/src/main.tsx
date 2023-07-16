@@ -12,8 +12,11 @@ import { Paths } from './paths.ts';
 import { store } from './app/store.ts';
 import { Auth } from './features/auth/auth.tsx';
 
-import './index.css';
 import { Employees } from './pages/employees/index.tsx';
+import { AddEmployee } from './pages/add-employee/index.tsx';
+import { Status } from './pages/status/index.tsx';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: Paths.register,
     element: <Register />,
+  },
+  {
+    path: Paths.employeeAdd,
+    element: <AddEmployee />,
+  },
+  {
+    path: `${Paths.status}/:status`,
+    element: <Status />,
   },
 ]);
 

@@ -43,9 +43,11 @@ export const Employees: React.FC = () => {
     }
   }, [navigate, user]);
 
+  const goToAddEmployee = () => navigate(Paths.employeeAdd);
+
   return (
     <Layout>
-      <CustomButton type='primary' onClick={() => null} icon={<PlusCircleOutlined />}>
+      <CustomButton type='primary' onClick={goToAddEmployee} icon={<PlusCircleOutlined />}>
         Add
       </CustomButton>
       <Table
