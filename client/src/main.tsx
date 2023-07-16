@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.tsx';
-import './index.css';
+import { ConfigProvider, theme } from 'antd';
 import { Paths } from './paths.ts';
+import { Login } from './pages/login/index.tsx';
+import { Register } from './pages/register/index.tsx';
+import App from './App.tsx';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -12,16 +16,18 @@ const router = createBrowserRouter([
   },
   {
     path: Paths.login,
-    element: <h1>Login</h1>,
+    element: <Login />,
   },
   {
     path: Paths.register,
-    element: <h1>register</h1>,
+    element: <Register />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+      <RouterProvider router={router} />
+    </ConfigProvider>
   </React.StrictMode>
 );
