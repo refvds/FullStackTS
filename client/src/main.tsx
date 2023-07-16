@@ -15,7 +15,8 @@ import { Auth } from './features/auth/auth.tsx';
 import { Employees } from './pages/employees/index.tsx';
 import { AddEmployee } from './pages/add-employee/index.tsx';
 import { Status } from './pages/status/index.tsx';
-import { Employee } from './pages/employee/index.tsx';
+import { EmployeePage } from './pages/employee/index.tsx';
+import { EditEmployee } from './pages/edit-employee/index.tsx';
 
 import './index.css';
 
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
   },
   {
     path: `${Paths.employee}/:id`,
-    element: <Employee />,
+    element: <EmployeePage />,
+  },
+  {
+    path: `${Paths.employeeEdit}/:id`,
+    element: <EditEmployee />,
   },
 ]);
 

@@ -14,7 +14,7 @@ import { ErrorMessage } from '../../components/error-message';
 import { Paths } from '../../paths';
 import { isErrorWithMessage } from '../../utilities/is-error-with-message';
 
-export const Employee = () => {
+export const EmployeePage = () => {
   const [error, setError] = useState('');
   const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ export const Employee = () => {
         <>
           <Divider orientation='left'>Action</Divider>
           <Space>
-            <Link to={`/employees/edit/${data.id}`}>
+            <Link to={`/employee/edit/${data.id}`}>
               <CustomButton shape='round' type='default' icon={<EditOutlined />}>
                 Edit
               </CustomButton>
