@@ -13,11 +13,12 @@ import { store } from './app/store.ts';
 import { Auth } from './features/auth/auth.tsx';
 
 import './index.css';
+import { Employees } from './pages/employees/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: Paths.home,
-    element: <h1>Home</h1>,
+    element: <Employees />,
   },
   {
     path: Paths.login,
